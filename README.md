@@ -6,3 +6,9 @@ My building time for each day of building is 120 minutes and each day of buildin
 
 ## daily apps build each day
 
+1. Day01 - Sunday 19, Nov 2023 - Navigation basics- [navio](https://github.com/machuchesteven/fluts/navio)
+2. Day02 -
+3. day03 -
+4. Day04 -
+5. Day05 -
+6. Day06 -
