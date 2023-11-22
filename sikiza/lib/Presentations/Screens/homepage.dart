@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:sikiza/Presentations/Screens/equalizerpage.dart";
 
-class name extends StatelessWidget {
-  const name({super.key});
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,16 +42,17 @@ class name extends StatelessWidget {
         ),
       ),
       body: Column(children: [
-        Container(
-          margin: EdgeInsets.all(8),
-          child: ElevatedButton(
-            child: Text("Equalizer"),
-            onPressed: (){
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Equalizerpage())
-              );
-            },
-          )
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(62, 71, 58, 183)),
+          
+          ),
+          child: const Text("Equalizer"),
+          onPressed: (){
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Equalizerpage())
+            );
+          },
         )
       ]),
     );

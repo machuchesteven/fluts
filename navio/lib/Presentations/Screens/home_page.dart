@@ -12,7 +12,7 @@ class Homepage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=> Settingpage()));},
+          onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=> const Settingpage()));},
           child: const Text("Go to About page"),
       ),
     ),
