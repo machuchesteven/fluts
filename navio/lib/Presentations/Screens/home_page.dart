@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navio/Presentations/Screens/bar_page.dart';
 import 'package:navio/Presentations/Screens/setting_page.dart';
 
 class Homepage extends StatelessWidget {
@@ -10,12 +11,27 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Navio Home"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=> const Settingpage()));},
-          child: const Text("Go to About page"),
+      body: Column(
+        children: [
+          Center(
+            child: ElevatedButton(
+              onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Settingpage()));},
+              child: const Text("Go to About page"),
+            ),
+          ),
+          const Text("Homepage information and intro")
+        ],
       ),
-    ),
+      floatingActionButton: IconButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+        ),
+        icon: const Icon(Icons.play_arrow),
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Barpage()));
+        },
+
+      )
     );
   }
 }
