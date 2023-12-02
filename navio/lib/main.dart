@@ -46,7 +46,6 @@ class MyApp extends StatelessWidget {
         ),
       ], selectedIndex: 0),
         ),
-        
     );
   }
 }
