@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:navio/Presentations/Screens/home_page.dart';
+import 'package:navio/Presentations/Screens/news_page.dart';
+import 'package:navio/Presentations/Screens/setting_page.dart';
 
 import 'Presentations/Screens/about_page.dart';
 
@@ -36,13 +38,19 @@ class MyApp extends StatelessWidget {
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Aboutpage()));
           },
           ),
-        const GButton(
-          icon: Icons.add,
-          text: "Add",
+        GButton(
+          icon: Icons.newspaper_sharp,
+          text: "News",
+          onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const Newspage()));
+          },
         ),
-        const GButton(
+        GButton(
           icon: Icons.settings,
           text: "Settings",
+          onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Settingpage()));
+          },
         ),
       ], selectedIndex: 0),
         ),

@@ -44,7 +44,7 @@ class Homepage extends StatelessWidget {
       body: Column(children: [
         ElevatedButton(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(62, 71, 58, 183)),
+            backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(62, 71, 58, 183)),
           
           ),
           child: const Text("Equalizer"),

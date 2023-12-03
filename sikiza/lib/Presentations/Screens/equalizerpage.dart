@@ -6,7 +6,7 @@ class Equalizerpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Equalizer")),
+      appBar: AppBar(title: const Text("Equalizer")),
       body: const Column(
         children: [
           Text("Equalizer page",
