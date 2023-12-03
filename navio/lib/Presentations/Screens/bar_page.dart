@@ -16,7 +16,7 @@ class _BarpageState extends State<Barpage> {
       bottomNavigationBar: GNav(
         gap: 5,
         tabs: [
-        GButton(
+        const GButton(
           icon: Icons.home,
           text: "Home",
         ),
@@ -27,11 +27,11 @@ class _BarpageState extends State<Barpage> {
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Aboutpage()));
           },
           ),
-        GButton(
+        const GButton(
           icon: Icons.add,
           text: "Add",
         ),
-        GButton(
+        const GButton(
           icon: Icons.settings,
           text: "Settings",
         ),

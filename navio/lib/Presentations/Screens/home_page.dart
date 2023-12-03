@@ -28,7 +28,7 @@ class Homepage extends StatelessWidget {
         ),
         icon: const Icon(Icons.play_arrow),
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Barpage()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Barpage()));
         },
 
       )

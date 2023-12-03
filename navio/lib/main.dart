@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBar: GNav(
         gap: 5,
         tabs: [
-        GButton(
+        const GButton(
           icon: Icons.home,
           text: "Home",
         ),
@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Aboutpage()));
           },
           ),
-        GButton(
+        const GButton(
           icon: Icons.add,
           text: "Add",
         ),
-        GButton(
+        const GButton(
           icon: Icons.settings,
           text: "Settings",
         ),
