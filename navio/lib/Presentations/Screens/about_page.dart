@@ -10,14 +10,15 @@ class Aboutpage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Navio About"),
       ),
-      body: Center(
-        child: ElevatedButton(
+      body: Column(
+        children:[ ElevatedButton(
           onPressed: () { Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => const Homepage())
             );
           },
           child: const Text("Homepage"),
       ),
+        
     ),
     );
   }
