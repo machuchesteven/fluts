@@ -18,8 +18,8 @@ class Aboutpage extends StatelessWidget {
           },
           child: const Text("Homepage"),
       ),
-        
-    ),
+      const Text("About page information and intro"),]
+      ),
     );
   }
 }

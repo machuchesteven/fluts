@@ -8,7 +8,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SoftPlayer"),
+        title: const Text("Sikiza"),
       ),
       drawer: Drawer(
         child: ListView(
