@@ -14,7 +14,6 @@ void main() {
   print("Show person info");
   machu.addData("Iconic", "Male", 45);
   machu.showInfo();
-
 }
 
 
@@ -33,10 +32,11 @@ class ActualPerson{
     this.sex = sex;
     this.age = age;
   }
-
   // Functional methods in classes
   void setName(String name){this.name = name;}
-  void showInfo(){print("Name: $name\nSex: $sex \nAge: $age");}
+  void showInfo(){
+    print("Name: $name\nSex: $sex \nAge: $age");
+  }
 }
 // classes without initialization
 

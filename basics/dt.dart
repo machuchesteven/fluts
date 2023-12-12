@@ -122,7 +122,7 @@ void eigth_func(){
   // with json data and handling API objects
   print("\n\nThis is for Maps as are called Dicts in Python.\n\n");
   // First Map
-  var toppings = {"john": "Pepperoni", "Mary": "Cheese"};
+  var toppings = {"john": "Pepperoni", "Anna": 23};
   // Show values of a map
   print(toppings);
   print(toppings["john"]);
@@ -143,6 +143,7 @@ void eigth_func(){
   print(toppings.values);
   print(toppings.keys);
   // Remove something from a map
+  print(toppings.runtimeType);
   toppings.remove("Tim");
   print(toppings);
   // remove everything and empty a map
