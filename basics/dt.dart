@@ -105,6 +105,11 @@ void seventh_func(){
   var mixedList = [1, 2, "Machu", true, "waporo", 47];
   print(mixedList);
   print(mixedList.runtimeType);
+
+  // Get range gives the items number within a specified range of items
+  print("\n\nGives the specified range of items example for between 2 and 4, it will stop at index before 4, ie 3 \n\n");
+  print(mixedList.getRange(2,4));
+  print("All elements are $mixedList \n\n");
   // remove item from a list
   var removed1 = mixedList.remove("Machu");
   print(mixedList);

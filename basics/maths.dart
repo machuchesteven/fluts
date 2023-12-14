@@ -1,5 +1,13 @@
 import 'dart:math';
 
+int get_random({int? min, required int max}){
+  if (min == null){
+    min = 0;
+  }
+  Random random = new Random();
+  // since random gets a range within a given limit eg for 10, it will take 0 - 9, 10 values
+  return min + random.nextInt((max + 1) - min);
+}
 
 void main(){
   Random random = new Random();
@@ -9,13 +17,9 @@ void main(){
   print(log(4));
   print(log10e);
   print(exp(1));
+  print(3/0); // for checking exceptions, but it returns infinity
+
+  print(int.parse("hello")); // this will throw an exception
+
 }
 
-int get_random({int? min, required int max}){
-  if (min == null){
-    min = 0;
-  }
-  Random random = new Random();
-  // since random gets a range within a given limit eg for 10, it will take 0 - 9, 10 values
-  return min + random.nextInt((max + 1) - min);
-}
