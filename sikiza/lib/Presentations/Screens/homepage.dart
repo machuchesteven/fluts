@@ -1,4 +1,6 @@
+import "dart:io";
 import "package:flutter/material.dart";
+import "package:sikiza/Application/utils/get_root.dart";
 import "package:sikiza/Presentations/Screens/equalizerpage.dart";
 
 class Homepage extends StatefulWidget {
@@ -9,6 +11,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +29,22 @@ class _HomepageState extends State<Homepage> {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const Equalizerpage()));
             },
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color.fromARGB(62, 71, 58, 183)),
+              ),
+              child: const Text(
+                "Get root directory",
+              ),
+              onPressed: () {
+                debugPrint("Get root directory");
+                },
+            ),
+          ),
         ]),
         bottomNavigationBar: _sikizaBottomNavBar());
   }
@@ -80,10 +99,13 @@ class _HomepageState extends State<Homepage> {
           label: "Settings",
         ),
       ],
-      currentIndex: 0,
-      selectedItemColor: Colors.deepPurple,
+      currentIndex: _currentIndex,
+      selectedItemColor: Colors.black,
       onTap: (int index) {
         debugPrint("Tapped item: $index");
+        setState(() {
+          _currentIndex = index;
+        });
         // set the current selected index to the pressed item's index
       },
     );
