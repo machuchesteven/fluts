@@ -25,4 +25,6 @@ The first module was indicated to give the structure of a dart programme, up to 
 16. Command line arguments and operations
 17. Shorthand syntax
 
+``` en
 Every modules is having comments on how it is implemented well, and also this documentation helps clarify what might be wrong.
+```
