@@ -1,6 +1,4 @@
-import "dart:io";
 import "package:flutter/material.dart";
-import "package:sikiza/Application/utils/get_root.dart";
 import "package:sikiza/Presentations/Screens/equalizerpage.dart";
 import "package:sikiza/Presentations/Screens/library_page.dart";
 
