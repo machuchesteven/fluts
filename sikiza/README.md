@@ -10,11 +10,13 @@ The app will have the following theme :-
 
 Color hexacodes are as follows :-
 
-- Dark Blue -
-- Black -
-- Grey -
-- White -
-- Dull white -
+- Dark Blue - #050e21 / #171c26
+- Black - #000000
+- Grey - #a8adb5
+- White - #6c7689
+- Grey - #a4aab7
+- Dull white - #edf0f5
+- White - #ffffff
 
 ### Theme modes
 
@@ -91,5 +93,6 @@ The actice playing song will show itself just a little on top of the bottom navi
 12. Page animations and progress tracking
 13. Custome application icons
 14. Mobile application deployment to PlayStore
+15. Bottom bar consistency using routers and navigators together
 
 The above concepts are crucial for me as a mobile application developer

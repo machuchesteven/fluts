@@ -2,6 +2,7 @@ import "dart:io";
 import "package:flutter/material.dart";
 import "package:sikiza/Application/utils/get_root.dart";
 import "package:sikiza/Presentations/Screens/equalizerpage.dart";
+import "package:sikiza/Presentations/Screens/library_page.dart";
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -42,7 +43,24 @@ class _HomepageState extends State<Homepage> {
               ),
               onPressed: () {
                 debugPrint("Get root directory");
-                },
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color.fromARGB(62, 71, 58, 183)),
+              ),
+              child: const Text(
+                "Library",
+              ),
+              onPressed: () {
+                debugPrint("Get to Library page");
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const LibraryPage()));
+              },
             ),
           ),
         ]),
