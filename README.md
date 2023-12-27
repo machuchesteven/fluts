@@ -9,7 +9,7 @@ My building time for each day of building is 120 minutes and each day of buildin
 1. Day01 - Sunday 19, Nov 2023 - Navigation basics- [navio](https://github.com/machuchesteven/fluts/navio)
 2. Day02 - Dec 19, Sikiza - MP3 player app
 3. day03 - Doing: Todo app, and customized time management app
-4. Day04 - Track me, Personal growth tracker and goal settings, for charts interaction with the system
+4. Day04 - Timed , Track me, Personal growth tracker and goal settings, for charts interaction with the system. With quick actions on long press
 5. Day05 - Cinemated, Animated cinema booking app with capabilities to generate cinemas bookings and store them as qr code with verification codes
 6. Day06 - Passit: Cinema and booking verifier application, reading qr and signing them as used in the app and to customers
 7. Day07 - Luparcel - Parcel tracking app, for parcel bookings up to destination verification using codes and locations for luggages
@@ -18,3 +18,4 @@ My building time for each day of building is 120 minutes and each day of buildin
 10. Day10 - Greatbet - Sports betting app
 11. Day11 - TzFantasy
 12. Day12 - Mona Sound Assistant app
+13. 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sikiza/Presentations/Screens/homepage.dart';
+import 'package:quick_actions/quick_actions.dart';
+import 'package:timed/Presentation/Screens/add_timer_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,32 +13,52 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Sikiza',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const Homepage());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Timed'),
+    );
   }
 }
 
-// the item below is inactive since we dumped it for now
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  final quickActions = QuickActions();
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    quickActions.setShortcutItems([
+      const ShortcutItem(type: 'event', localizedTitle: "Add Timer+"),
+      const ShortcutItem(type: 'message', localizedTitle: "Add Task"),
+      const ShortcutItem(type: 'search', localizedTitle: "Search Task")
+    ]);
+    quickActions.initialize((type) {
+      // type is the type of the shortcut item that was pressed.
+      if (type == 'event') {
+        debugPrint('Add Timer');
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const AddTimerPage()));
+      } else if (type == 'message') {
+        debugPrint('Add Task');
+      } else if (type == 'search') {
+        debugPrint('Search Task');
+      }
     });
   }
 
@@ -47,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -66,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

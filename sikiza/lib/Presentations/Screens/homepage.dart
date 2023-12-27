@@ -39,9 +39,7 @@ class _HomepageState extends State<Homepage> {
               child: const Text(
                 "Get root directory",
               ),
-              onPressed: () {
-                debugPrint("Get root directory");
-              },
+              onPressed: () {},
             ),
           ),
           Padding(
