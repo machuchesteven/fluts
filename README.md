@@ -18,4 +18,4 @@ My building time for each day of building is 120 minutes and each day of buildin
 10. Day10 - Greatbet - Sports betting app
 11. Day11 - TzFantasy
 12. Day12 - Mona Sound Assistant app
-13. 
+13.

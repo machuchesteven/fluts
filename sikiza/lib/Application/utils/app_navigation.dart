@@ -14,11 +14,9 @@ class AppNavigation {
       routes: <RouteBase>[
         // MainWrapper for Routes
         StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell){
-          return MainWrapper();
-        },
-          branches: <StatefulShellBranch>[
-
-        ])
+            builder: (context, state, navigationShell) {
+              return MainWrapper();
+            },
+            branches: <StatefulShellBranch>[])
       ]);
 }
