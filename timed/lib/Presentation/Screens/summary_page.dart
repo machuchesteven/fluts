@@ -18,13 +18,15 @@ class SummaryPage extends StatefulWidget {
 class _SummaryPageState extends State<SummaryPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        children: [
-          Text(
-            'Summary Page',
-          ),
-        ],
+    return const Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              'Summary Page',
+            ),
+          ],
+        ),
       ),
     );
   }

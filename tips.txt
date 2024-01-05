@@ -1,0 +1,75 @@
+1. Navigation:
+// with the context navigator
+Navigator.of(context).push(
+    MaterialPageRoute(context => const PageComp());
+)
+
+// Going <i class="fa fa-backward
+Naavigator.of(context).pop();
+
+
+// For the navbar that is consistent
+1. Define the routes
+2. Map the route components with the Pages
+3. Handle the navigation with the index and the _bodyBuilder component
+4. Handle other routes that will be having the navigation component with the persistent BottomNvbar
+
+// BOTTOM TAB CNSISTENCY
+
+
+
+// THEME MANAGEMENT
+
+
+
+// QUICK ACTIONS MANAGEMENT
+
+
+
+// NOTIFICATIONS
+
+
+
+// HOMESCREEN WIDGETS
+
+
+
+// HOMESCREEN NOTOFICATIONS ATTACHED BAR
+
+
+
+// PLAYING WITH MAPS
+
+
+
+// RATING SYSTEM
+
+
+
+// ANIMATIONS
+
+
+
+
+// DEALING WITH MEDIA AND CONTENTS
+
+
+
+
+
+// HANDLING DRAGS AND DROPS
+
+
+
+// USING SOUND ASSISTANTS FROM VOICE COMMANDS
+
+
+
+// USER STATES MANAGEMENT
+
+
+
+
+// PERSISTSENT BOOTS BETWEEN COMPONENTS
+
+

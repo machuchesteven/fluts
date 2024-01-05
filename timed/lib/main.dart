@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // default flutter counter method
   void _incrementCounter() {
     setState(() {
-      _currentIndex = 0;
+      debugPrint("incrementCounter");
     });
   }
 
@@ -81,8 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
             MaterialPageRoute(builder: (context) => const AddTimerPage()));
       } else if (type == 'task') {
         debugPrint('Add Task');
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const AddTaskPage()));
+        // Navigator.of(context)
+        //     .push(MaterialPageRoute(builder: (context) => const AddTaskPage()));
+        Navigator.of(context).pushNamed('/day');
       } else if (type == 'expense') {
         debugPrint('Search Task');
         Navigator.of(context).push(MaterialPageRoute(
@@ -101,12 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.of(context).pushNamed('/summary');
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+        unselectedItemColor: Colors.black45,
+        selectedItemColor: Colors.blue,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
