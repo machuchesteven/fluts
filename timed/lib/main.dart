@@ -1,7 +1,7 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'package:timed/Presentation/Screens/add_expenditure_page.dart';
-import 'package:timed/Presentation/Screens/add_task_page.dart';
 import 'package:timed/Presentation/Screens/add_timer_page.dart';
 import 'package:timed/Presentation/Screens/day_page.dart';
 import 'package:timed/Presentation/Screens/expenses_page.dart';
@@ -9,14 +9,67 @@ import 'package:timed/Presentation/Screens/homepage.dart';
 import 'package:timed/Presentation/Screens/notification_page.dart';
 import 'package:timed/Presentation/Screens/summary_page.dart';
 
-void main() {
+void main() async {
+  await AwesomeNotifications().initialize(
+      null, // for default values
+      [
+        NotificationChannel(
+          channelGroupKey: "basic_channel_group",
+          channelKey: "basic_channel",
+          channelName: "Basic Notifications",
+          channelDescription: "Basic Notification Channel",
+        ),
+      ], // add a list of notifications channels, we need at least one notification channel
+      channelGroups: [
+        NotificationChannelGroup(
+            channelGroupKey: "basic_channel_group",
+            channelGroupName: "Basic Group"),
+        // you can set as a defaultGroup with a true
+      ],
+      debug: true);
+  bool isAllowedToSendNotifications =
+      await AwesomeNotifications().isNotificationAllowed();
+  if (!isAllowedToSendNotifications) {
+    AwesomeNotifications().requestPermissionToSendNotifications();
+  }
+  //else {
+  //   AwesomeNotifications().createNotification(
+  //     content: NotificationContent(
+  //       id: 10,
+  //       channelKey: 'basic_channel',
+  //       title: 'Simple Notification',
+  //       body: 'Simple body',
+  //       notificationLayout: NotificationLayout.BigPicture,
+  //       bigPicture: 'https://picsum.photos/300/200',
+  //     ),
+  //   );
+  // }
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+  static const String name = "Timed Notifications";
+  static const Color mainColor = Colors.deepPurple;
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  @override
+  void initState() {
+    AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
+      if (!isAllowed) {
+        AwesomeNotifications().requestPermissionToSendNotifications();
+      }
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

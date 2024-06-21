@@ -7,9 +7,6 @@ class RoutedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Routed"),
-      ),
       body: Center(
         child: Column(
           children: [

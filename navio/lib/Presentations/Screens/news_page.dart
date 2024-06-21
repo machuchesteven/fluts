@@ -15,9 +15,6 @@ class __NewspageState extends State<Newspage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Newspage'),
-      ),
       body: ListView.builder(
             itemCount: cinemas.length,
             itemBuilder: (context, index) {

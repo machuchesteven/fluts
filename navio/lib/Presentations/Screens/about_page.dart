@@ -7,19 +7,16 @@ class Aboutpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Navio About"),
-      ),
-      body: Column(
-        children:[ ElevatedButton(
-          onPressed: () { Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const Homepage())
-            );
+      body: Column(children: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const Homepage()));
           },
           child: const Text("Homepage"),
-      ),
-      const Text("About page information and intro"),]
-      ),
+        ),
+        const Text("About page information and intro"),
+      ]),
     );
   }
 }

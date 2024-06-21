@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<uses-permission android:name="android.permission.VIBRATE"/>
+<!-- these two permissions are just here for the awesome notifications -->
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETE"/>
     <application
         android:label="MeMax"
         android:name="${applicationName}"

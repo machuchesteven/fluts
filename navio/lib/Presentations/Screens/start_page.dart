@@ -7,9 +7,6 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Navio Start"),
-      ),
       body: Center(
         child: Column(
           children: [

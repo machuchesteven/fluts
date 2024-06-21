@@ -1,59 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:navio/Presentations/Screens/home_page.dart';
 import 'package:navio/Presentations/Screens/news_page.dart';
 import 'package:navio/Presentations/Screens/setting_page.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import 'Presentations/Screens/about_page.dart';
-
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key}) : _controller = PersistentTabController(initialIndex: 0);
+
+  final PersistentTabController _controller;
+
+  List<Widget> _buildScreens() {
+    return [const Homepage(), const Newspage(), const Settingpage()];
+  }
+
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(icon: const Icon(Icons.home), title: "Home"),
+      PersistentBottomNavBarItem(
+          icon: const Icon(Icons.newspaper), title: "News"),
+      PersistentBottomNavBarItem(
+          icon: const Icon(Icons.settings), title: "Settings")
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Navio Demo",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:Scaffold(
-        appBar: AppBar(
-          title: const Text("Navio Demo"),
-        ),
-        body: const Homepage(),
-        bottomNavigationBar: GNav(
-        gap: 5,
-        tabs: [
-        const GButton(
-          icon: Icons.home,
-          text: "Home",
-        ),
-        GButton(
-          icon: Icons.search,
-          text: "Search",
-          onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Aboutpage()));
-          },
-          ),
-        GButton(
-          icon: Icons.newspaper_sharp,
-          text: "News",
-          onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const Newspage()));
-          },
-        ),
-        GButton(
-          icon: Icons.settings,
-          text: "Settings",
-          onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Settingpage()));
-          },
-        ),
-      ], selectedIndex: 0),
-        ),
+      initialRoute: '/', // Define the initial route
+      routes: {
+        '/': (context) => Scaffold(
+              appBar: AppBar(
+                title: const Text("My24 Routines"),
+                centerTitle: true,
+              ),
+              body: PersistentTabView(
+                context,
+                controller: _controller,
+                screens: _buildScreens(),
+                items: _navBarsItems(),
+                confineInSafeArea: true,
+                backgroundColor: Colors.white,
+                onItemSelected: (index) {
+                  // Renamed 'int' to 'index'
+                  debugPrint("current index is $index");
+                },
+                handleAndroidBackButtonPress: true,
+                hideNavigationBarWhenKeyboardShows: true,
+                decoration: NavBarDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  colorBehindNavBar: Colors.white,
+                ),
+                popAllScreensOnTapOfSelectedTab: true,
+                popActionScreens: PopActionScreensType.all,
+                itemAnimationProperties: const ItemAnimationProperties(
+                  duration: Duration(milliseconds: 200),
+                  curve: Curves.ease,
+                ),
+                screenTransitionAnimation: const ScreenTransitionAnimation(
+                  animateTabTransition: true,
+                  curve: Curves.ease,
+                  duration: Duration(milliseconds: 200),
+                ),
+                navBarHeight: MediaQuery.of(context).viewInsets.bottom > 0
+                    ? 0.0
+                    : kBottomNavigationBarHeight,
+                navBarStyle: NavBarStyle.style12,
+              ),
+            ),
+      },
     );
   }
 }

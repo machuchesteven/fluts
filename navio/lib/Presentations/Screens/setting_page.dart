@@ -7,9 +7,6 @@ class Settingpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Navio Setting"),
-      ),
       body: Center(
         child: ElevatedButton(
           onPressed: () { Navigator.of(context).push(

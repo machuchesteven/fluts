@@ -9,36 +9,36 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text("Navio Home"),
-      // ),
-      body: Column(
-        children: [
-          Center(
-            child: ElevatedButton(
-              onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Settingpage()));},
-              child: const Text("Go to About page"),
+        body: Column(
+          children: [
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Settingpage()));
+                },
+                child: const Text("Go to About page"),
+              ),
             ),
-          ),
-          const Text("Homepage information and intro"),
-          ElevatedButton(
-            onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Newspage()));
-            },
-             child: const Text("News"),
-          ),
-        ],
-      ),
-      floatingActionButton: IconButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+            const Text("Homepage information and intro"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Newspage()));
+              },
+              child: const Text("News"),
+            ),
+          ],
         ),
-        icon: const Icon(Icons.play_arrow),
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Barpage()));
-        },
-      
-      )
-    );
+        floatingActionButton: IconButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+          ),
+          icon: const Icon(Icons.play_arrow),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => const Barpage()));
+          },
+        ));
   }
 }
